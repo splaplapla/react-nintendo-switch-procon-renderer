@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 export const buttons = [
   "a",
@@ -30,7 +29,6 @@ type ButtonsMap = {
   [key in Button]: boolean;
 };
 
-
 export const Procon = ({ pressedButtons }: Props) => {
   const defaultColor = "#7C8388";
   const pressedColor = "red";
@@ -43,13 +41,12 @@ export const Procon = ({ pressedButtons }: Props) => {
     }, {} as ButtonsMap);
   }
 
-  const Svg = styled.svg``;
   const buttonColor = (button: Button) => {
     return pressedButtonsMap[button] ? pressedColor : defaultColor
   }
 
   return(
-    <Svg width={"480"} viewBox="0 0 1024 830" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" >
+    <svg width={"480"} viewBox="0 0 1024 830" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" >
       {/* Left Grip */}
       <path
         d="M4.50003 710C7.00003 742 4 783.5 57.5 818.5C111 853.5 163.5 800 178.5 761.5C193.5 723 239.5 640 257 629.5C208.167 572.269 99.9 437.125 57.5 354.403C22.265 494.962 2.74123 687.487 4.50003 710Z"
@@ -135,6 +132,6 @@ export const Procon = ({ pressedButtons }: Props) => {
       <path
         d="M276.621 30.8329C286.523 34.4403 294.999 82.3138 298 105.8C292.374 110.873 248.492 112 221.487 112C194.483 112 151.725 105.8 146.662 100.727C141.599 95.6539 166.916 42.6697 177.042 34.7785C187.169 26.8872 264.244 26.3236 276.621 30.8329Z"
         fill={buttonColor("zl")} stroke="black" strokeWidth="4" />
-    </Svg>
+    </svg>
   )
 }
