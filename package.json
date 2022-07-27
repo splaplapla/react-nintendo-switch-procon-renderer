@@ -7,10 +7,10 @@
   "types": "./dist/index.d.ts",
   "license": "MIT",
   "files": [
-    "/dist"
+    "dist"
   ],
   "scripts": {
-    "build": "esbuild src/*.* --bundle --minify --outdir=./dist",
+    "build": "tsc",
     "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir './dist'",
     "release-build": "yarn run build && yarn run build:types"
   },

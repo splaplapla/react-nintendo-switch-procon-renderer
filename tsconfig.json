@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "target": "ES6",
-    "module": "CommonJS",
+    "module": "commonjs",
     "declaration": true,
     "strict": true,
+    "outDir": "./dist",
     "lib": ["ES2020", "dom"]
   },
   "include": ["./src/**/*"],
