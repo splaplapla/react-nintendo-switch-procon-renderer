@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "target": "ES6",
+    "module": "CommonJS",
+    "declaration": true,
+    "strict": true,
+    "lib": ["ES2020", "dom"]
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
+}
