@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "repository": "https://github.com/splaplapla/react-gamepad-procon",
   "author": "jiikko",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.esm.js",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
   "files": [
     "/dist"
   ],
   "scripts": {
-    "build:esbuild": "ts-node build.ts",
-    "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir './dist'"
+    "build": "esbuild src/*.* --bundle --minify --outdir=./dist",
+    "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir './dist'",
+    "release-build": "yarn run build && yarn run build:types"
   },
   "devDependencies": {
     "@types/node": "^18.6.1",

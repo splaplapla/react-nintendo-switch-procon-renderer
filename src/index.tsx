@@ -1,6 +1,25 @@
-import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
-import { Button } from './button_type';
+
+export const buttons = [
+  "a",
+  "b",
+  "x",
+  "y",
+  "up",
+  "right",
+  "down",
+  "left",
+  "r",
+  "l",
+  "zr",
+  "zl",
+  "plus",
+  "minus",
+  "home",
+  "cap",
+] as const;
+
+export type Button = typeof buttons[number];
 
 type Props = {
   pressedButtons: Array<Button>;
