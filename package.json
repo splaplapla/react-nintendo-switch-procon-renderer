@@ -1,6 +1,6 @@
 {
   "name": "react-nintendo-switch-procon-renderer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": "https://github.com/splaplapla/react-nintendo-switch-procon-renderer",
   "author": "jiikko",
   "main": "./dist/index.js",
