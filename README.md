@@ -30,3 +30,8 @@ export default function App() {
 ## Hot to release
 * yarn release-build
 * npm publish
+
+## TODO
+* left stick, right stickの押し込み反映
+* スティックの傾きの反映
+* do npm publish by github action
