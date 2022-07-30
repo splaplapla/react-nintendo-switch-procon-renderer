@@ -1,7 +1,7 @@
 {
-  "name": "react-gamepad-procon",
+  "name": "react-nintendo-switch-procon-renderer",
   "version": "1.0.1",
-  "repository": "https://github.com/splaplapla/react-gamepad-procon",
+  "repository": "https://github.com/splaplapla/react-nintendo-switch-procon-renderer",
   "author": "jiikko",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
