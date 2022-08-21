@@ -1,35 +1,11 @@
 import React from "react";
+import { buttons, ButtonsMap, Button } from './types';
 
-export const buttons = [
-  "a",
-  "b",
-  "x",
-  "y",
-  "up",
-  "right",
-  "down",
-  "left",
-  "r",
-  "l",
-  "zr",
-  "zl",
-  "plus",
-  "minus",
-  "home",
-  "cap",
-] as const;
-
-export type Button = typeof buttons[number];
-
-type Props = {
+type ProconProps = {
   pressedButtons: Array<Button>;
 };
 
-type ButtonsMap = {
-  [key in Button]: boolean;
-};
-
-export const Procon = ({ pressedButtons }: Props) => {
+const Procon = ({ pressedButtons }: ProconProps) => {
   const defaultColor = "#7C8388";
   const pressedColor = "red";
   let pressedButtonsMap = {} as ButtonsMap;
@@ -135,3 +111,4 @@ export const Procon = ({ pressedButtons }: Props) => {
     </svg>
   )
 }
+export { buttons, Procon };
