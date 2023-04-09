@@ -4,15 +4,22 @@ This npm package is a react component that displays the nintendo switch pro cont
 [demo](https://codesandbox.io/s/eact-gamepad-procon-sample-49cdb1)
 
 ## Usage
-The available inputs are "a", "b", "x", "y", "up", "right", "down", "left", "r", "l", "zr", "zl", "plus", "minus", "home", "cap".
+* callback
+  * on a click butotn
+    * handleButtonClick(button: Button)
+* The available inputs are "a", "b", "x", "y", "up", "right", "down", "left", "r", "l", "zr", "zl", "plus", "minus", "home", "cap".
 
 ```javascript
 import { Procon, buttons } from "react-nintendo-switch-procon-renderer";
 
 export default function App() {
+  const handleButtonClick = (button: Button) => {
+    console.log(button);
+  }
+
   return (
     <>
-      <Procon />
+      <Procon pressedButtons={[]} handleButtonClick={handleButtonClick} />
       <hr />
       <Procon pressedButtons={["zr", "up"]} />
       <hr />
