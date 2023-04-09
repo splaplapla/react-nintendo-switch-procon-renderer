@@ -26,6 +26,7 @@ export default function App() {
 ## Development
 * yarn
 * yarn build
+* cd sample && yarn server
 
 ## Hot to release
 * yarn release-build

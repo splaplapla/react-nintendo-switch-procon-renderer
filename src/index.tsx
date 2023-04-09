@@ -1,6 +1,6 @@
 import React from "react";
 
-export const buttons = [
+export const buttons: readonly string[] = [
   "a",
   "b",
   "x",
