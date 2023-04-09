@@ -1,6 +1,6 @@
 import React from "react";
 
-export const buttons = [
+export const buttons: readonly string[] = [
   "a",
   "b",
   "x",
@@ -23,13 +23,14 @@ export type Button = typeof buttons[number];
 
 type Props = {
   pressedButtons: Array<Button>;
+  handleButtonClick?: (button: Button) => void;
 };
 
 type ButtonsMap = {
   [key in Button]: boolean;
 };
 
-export const Procon = ({ pressedButtons }: Props) => {
+export const Procon = ({ pressedButtons, handleButtonClick }: Props) => {
   const defaultColor = "#7C8388";
   const pressedColor = "red";
   let pressedButtonsMap = {} as ButtonsMap;
@@ -72,66 +73,66 @@ export const Procon = ({ pressedButtons }: Props) => {
       <circle cx="632" cy="483" r="87" fill="#030407" />
 
       {/* Left Stick */}
-      <circle cx="224" cy="347" r="59" />
+      <circle cx="224" cy="347" r="59" onClick={handleButtonClick ? (event) => handleButtonClick("left") : undefined} />
 
       {/* Right Stick */}
-      <circle cx="632" cy="483" r="59" />
+      <circle cx="632" cy="483" r="59" onClick={handleButtonClick ? (event) => handleButtonClick("right") : undefined} />
 
       {/* Direction Up */}
-      <path d="M325 411.5H346.5H368V462.5L346.5 484L325 462.5V411.5Z" fill={buttonColor("up")} stroke="#030407" strokeWidth="4" />
+      <path d="M325 411.5H346.5H368V462.5L346.5 484L325 462.5V411.5Z" fill={buttonColor("up")} stroke="#030407" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("up") : undefined} />
 
       {/* Direction Right */}
-      <path d="M419 462.5L419 484L419 505.5L368 505.5L346.5 484L368 462.5L419 462.5Z" fill={buttonColor("right")} stroke="#030407" strokeWidth="4" />
+      <path d="M419 462.5L419 484L419 505.5L368 505.5L346.5 484L368 462.5L419 462.5Z" fill={buttonColor("right")} stroke="#030407" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("right") : undefined} />
 
       {/* Direction Down */}
-      <path d="M325 556.5H346.5H368V505.5L346.5 484L325 505.5V556.5Z" fill={buttonColor("down")} stroke="#030407" strokeWidth="4" />
+      <path d="M325 556.5H346.5H368V505.5L346.5 484L325 505.5V556.5Z" fill={buttonColor("down")} stroke="#030407" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("down") : undefined} />
 
       {/* Direction Left */}
-      <path d="M274 462.5L274 484L274 505.5L325 505.5L346.5 484L325 462.5L274 462.5Z" fill={buttonColor("left")} stroke="#030407" strokeWidth="4" />
+      <path d="M274 462.5L274 484L274 505.5L325 505.5L346.5 484L325 462.5L274 462.5Z" fill={buttonColor("left")} stroke="#030407" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("left") : undefined} />
 
       {/* Button X */}
-      <circle cx="764" cy="277" r="37" fill={buttonColor("x")} stroke="#030407" strokeWidth="4" />
+      <circle cx="764" cy="277" r="37" fill={buttonColor("x")} stroke="#030407" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("x") : undefined} />
 
       {/* Button Y */}
-      <circle cx="686" cy="345" r="37" fill={buttonColor("y")} stroke="#030407" strokeWidth="4" />
+      <circle cx="686" cy="345" r="37" fill={buttonColor("y")} stroke="#030407" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("y") : undefined} />
 
       {/* Button A */}
-      <circle cx="842" cy="345" r="37" fill={buttonColor("a")} stroke="#030407" strokeWidth="4" />
+      <circle cx="842" cy="345" r="37" fill={buttonColor("a")} stroke="#030407" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("a") : undefined} />
 
       {/* Button B */}
-      <circle cx="764" cy="415" r="37" fill={buttonColor("b")} stroke="#030407" strokeWidth="4" />
+      <circle cx="764" cy="415" r="37" fill={buttonColor("b")} stroke="#030407" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("b") : undefined} />
 
       {/* Plus */}
-      <circle cx="625" cy="269" r="22" fill={buttonColor("plus")} stroke="#030407" strokeWidth="4" />
+      <circle cx="625" cy="269" r="22" fill={buttonColor("plus")} stroke="#030407" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("plus") : undefined} />
 
       {/* Minus */}
-      <circle cx="375" cy="269" r="22" fill={buttonColor("minus")} stroke="#030407" strokeWidth="4" />
+      <circle cx="375" cy="269" r="22" fill={buttonColor("minus")} stroke="#030407" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("minus") : undefined} />
 
       {/* Home */}
-      <circle cx="570" cy="347" r="22" fill={buttonColor("home")} stroke="#030407" strokeWidth="4" />
+      <circle cx="570" cy="347" r="22" fill={buttonColor("home")} stroke="#030407" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("home") : undefined} />
 
       {/* ScreenShot */}
       <rect x="408" y="326" width="42" height="42" rx="6"
-        fill={buttonColor("cap")} stroke="#030407" strokeWidth="4" />
+        fill={buttonColor("cap")} stroke="#030407" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("cap") : undefined} />
 
       {/* R */}
       <path d="M890 221C857.466 181.718 761.592 162.969 667 155.109C673.167 151.239 687.4 142.9 695 140.5C704.5 137.5 755.5 142.5 806.5 152.5C847.3 160.5 879.167 201.5 890 221Z"
-        fill={buttonColor("r")} stroke="black" strokeWidth="4" />
+        fill={buttonColor("r")} stroke="black" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("r") : undefined} />
 
       {/* L */}
       <path
         d="M110 221C142.534 181.718 238.408 162.969 333 155.109C326.833 151.239 312.6 142.9 305 140.5C295.5 137.5 244.5 142.5 193.5 152.5C152.7 160.5 120.833 201.5 110 221Z"
-        fill={buttonColor("l")} stroke="black" strokeWidth="4" />
+        fill={buttonColor("l")} stroke="black" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("l") : undefined} />
 
       {/* ZR */}
       <path
         d="M722.379 30.8329C712.477 34.4403 704.001 82.3138 701 105.8C706.626 110.873 750.508 112 777.513 112C804.517 112 847.275 105.8 852.338 100.727C857.401 95.6539 832.084 42.6697 821.958 34.7785C811.831 26.8872 734.756 26.3236 722.379 30.8329Z"
-        fill={buttonColor("zr")} stroke="black" strokeWidth="4" />
+        fill={buttonColor("zr")} stroke="black" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("zr") : undefined} />
 
       {/* ZL */}
       <path
         d="M276.621 30.8329C286.523 34.4403 294.999 82.3138 298 105.8C292.374 110.873 248.492 112 221.487 112C194.483 112 151.725 105.8 146.662 100.727C141.599 95.6539 166.916 42.6697 177.042 34.7785C187.169 26.8872 264.244 26.3236 276.621 30.8329Z"
-        fill={buttonColor("zl")} stroke="black" strokeWidth="4" />
+        fill={buttonColor("zl")} stroke="black" strokeWidth="4" onClick={handleButtonClick ? (event) => handleButtonClick("zl") : undefined} />
     </svg>
   )
 }
